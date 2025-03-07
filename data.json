@@ -484,5 +484,167 @@
             "Độ phổ biến": "TRUNG BÌNH",
             "Ví dụ": "他是个尚书。(Tā shì gè shàngshū.) – Anh ấy là một thượng thư."
         }
+    ],
+    "手": [
+        {
+            "STT": 1,
+            "Chữ Hán": "拿",
+            "Phiên âm": "ná",
+            "Ý nghĩa": "Cầm, nắm",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "请拿好你的书。(Qǐng ná hǎo nǐ de shū.) – Hãy cầm sách của bạn cẩn thận."
+        },
+        {
+            "STT": 2,
+            "Chữ Hán": "把",
+            "Phiên âm": "bǎ",
+            "Ý nghĩa": "Cầm, nắm; lượng từ",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "请把门关上。(Qǐng bǎ mén guānshàng.) – Hãy đóng cửa lại."
+        },
+        {
+            "STT": 3,
+            "Chữ Hán": "拉",
+            "Phiên âm": "lā",
+            "Ý nghĩa": "Kéo",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "他拉着我的手。(Tā lāzhe wǒ de shǒu.) – Anh ấy kéo tay tôi."
+        },
+        {
+            "STT": 4,
+            "Chữ Hán": "推",
+            "Phiên âm": "tuī",
+            "Ý nghĩa": "Đẩy",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "请推门进去。(Qǐng tuī mén jìnqù.) – Hãy đẩy cửa vào."
+        },
+        {
+            "STT": 5,
+            "Chữ Hán": "抓",
+            "Phiên âm": "zhuā",
+            "Ý nghĩa": "Bắt, nắm",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "警察抓住了小偷。(Jǐngchá zhuāzhù le xiǎotōu.) – Cảnh sát đã bắt tên trộm."
+        },
+        {
+            "STT": 6,
+            "Chữ Hán": "打",
+            "Phiên âm": "dǎ",
+            "Ý nghĩa": "Đánh, chơi",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "他在打篮球。(Tā zài dǎ lánqiú.) – Anh ấy đang chơi bóng rổ."
+        },
+        {
+            "STT": 7,
+            "Chữ Hán": "拍",
+            "Phiên âm": "pāi",
+            "Ý nghĩa": "Đập, vỗ, chụp ảnh",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "请帮我拍张照片。(Qǐng bāng wǒ pāi zhāng zhàopiàn.) – Hãy giúp tôi chụp một bức ảnh."
+        },
+        {
+            "STT": 8,
+            "Chữ Hán": "拆",
+            "Phiên âm": "chāi",
+            "Ý nghĩa": "Tháo, gỡ",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他拆开了礼物。(Tā chāikāi le lǐwù.) – Anh ấy tháo quà ra."
+        },
+        {
+            "STT": 9,
+            "Chữ Hán": "折",
+            "Phiên âm": "zhé",
+            "Ý nghĩa": "Gấp, bẻ",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他把纸折成了飞机。(Tā bǎ zhǐ zhé chéng le fēijī.) – Anh ấy gấp giấy thành máy bay."
+        },
+        {
+            "STT": 10,
+            "Chữ Hán": "抱",
+            "Phiên âm": "bào",
+            "Ý nghĩa": "Ôm",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "她抱着孩子。(Tā bàozhe háizi.) – Cô ấy ôm đứa bé."
+        },
+        {
+            "STT": 11,
+            "Chữ Hán": "抛",
+            "Phiên âm": "pāo",
+            "Ý nghĩa": "Ném",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他抛了一块石头。(Tā pāole yí kuài shítou.) – Anh ấy ném một hòn đá."
+        },
+        {
+            "STT": 12,
+            "Chữ Hán": "按",
+            "Phiên âm": "àn",
+            "Ý nghĩa": "Ấn, nhấn",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "请按电梯按钮。(Qǐng àn diàntī ànniǔ.) – Hãy ấn nút thang máy."
+        },
+        {
+            "STT": 13,
+            "Chữ Hán": "拖",
+            "Phiên âm": "tuō",
+            "Ý nghĩa": "Kéo, lôi",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他拖着行李箱走。(Tā tuōzhe xínglǐxiāng zǒu.) – Anh ấy kéo vali đi."
+        },
+        {
+            "STT": 14,
+            "Chữ Hán": "换",
+            "Phiên âm": "huàn",
+            "Ý nghĩa": "Đổi",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "我想换钱。(Wǒ xiǎng huàn qián.) – Tôi muốn đổi tiền."
+        },
+        {
+            "STT": 15,
+            "Chữ Hán": "握",
+            "Phiên âm": "wò",
+            "Ý nghĩa": "Nắm",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他握着我的手。(Tā wòzhe wǒ de shǒu.) – Anh ấy nắm tay tôi."
+        },
+        {
+            "STT": 16,
+            "Chữ Hán": "搬",
+            "Phiên âm": "bān",
+            "Ý nghĩa": "Chuyển, dọn",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我们正在搬家。(Wǒmen zhèngzài bān jiā.) – Chúng tôi đang chuyển nhà."
+        },
+        {
+            "STT": 17,
+            "Chữ Hán": "擦",
+            "Phiên âm": "cā",
+            "Ý nghĩa": "Lau",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "请擦黑板。(Qǐng cā hēibǎn.) – Hãy lau bảng."
+        },
+        {
+            "STT": 18,
+            "Chữ Hán": "挑",
+            "Phiên âm": "tiāo",
+            "Ý nghĩa": "Chọn, nhấc",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "你可以挑一个。(Nǐ kěyǐ tiāo yí gè.) – Bạn có thể chọn một cái."
+        },
+        {
+            "STT": 19,
+            "Chữ Hán": "掉",
+            "Phiên âm": "diào",
+            "Ý nghĩa": "Rơi, mất",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我的手机掉了。(Wǒ de shǒujī diào le.) – Điện thoại của tôi bị rơi rồi."
+        },
+        {
+            "STT": 20,
+            "Chữ Hán": "握",
+            "Phiên âm": "wò",
+            "Ý nghĩa": "Bắt tay, cầm chặt",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他们握手道别。(Tāmen wòshǒu dàobié.) – Họ bắt tay chào tạm biệt."
+        }
     ]
 }
