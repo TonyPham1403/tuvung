@@ -1,0 +1,35 @@
+name: Auto Update data.json
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/10 * * * *' # Chạy mỗi 15 phút
+  workflow_dispatch: # Cho phép chạy thủ công
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Install dependencies
+        run: npm install xlsx
+
+      - name: 🔄 Convert Excel to JSON
+        run: node convertExcelToJson.js
+
+      - name: 📤 Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || (git commit -m "🔄 Auto-update data.json" && git push)
