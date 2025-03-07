@@ -289,7 +289,7 @@
         }
 
         // Fetch dữ liệu từ data.json
-        fetch("data.json")
+        fetch(`data.json?t=${new Date().getTime()}`)
             .then(response => response.json())
             .then(json => {
                 boThuList.forEach(boThu => {
