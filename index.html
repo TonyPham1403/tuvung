@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Bộ Thủ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Ô nhập bộ thủ */
+        #boThuContainerWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #selectAllBtn {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        #selectAllBtn.active {
+            background-color: #dc3545;
+        }
+
+        #boThuInput {
+            width: 300px;
+            height: 60px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: left;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            overflow-y: auto;
+        }
+
+        /* Container chứa danh sách bộ thủ */
+        #boThuContainer {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #ccc;
+            background: white;
+            padding: 10px;
+            width: 320px;
+            margin: 15px auto;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        /* Danh sách bộ thủ */
+        .boThuItem {
+            padding: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .boThuItem:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Khi bộ thủ được chọn */
+        .selected {
+            border-color: #1e7e34;
+            background-color: #d4edda;
+        }
+
+        /* Nút bắt đầu */
+        #startBtn {
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #startBtn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chọn Bộ Thủ</h1>
+
+    <!-- Nút chọn tất cả và ô nhập bộ thủ -->
+    <div id="boThuContainerWrapper">
+        <button id="selectAllBtn">All</button>
+        <textarea id="boThuInput" placeholder="Nhập hoặc chọn bộ thủ..."></textarea>
+    </div>
+
+    <!-- Danh sách cuộn chọn bộ thủ -->
+    <div id="boThuContainer"></div>
+
+    <button id="startBtn" disabled>Bắt đầu</button>
+
+    <script>
+        let selectedBoThuList = [];
+        let boThuList = [];
+        let validBoThuList = [];
+
+        // Đọc danh sách bộ thủ từ bothu.json
+        fetch("bothu.json")
+            .then(response => response.json())
+            .then(bothuData => {
+                boThuList = bothuData; // Lưu danh sách bộ thủ đầy đủ
+
+                // Tiếp tục đọc từ data.json để lọc danh sách hợp lệ
+                return fetch("data.json");
+            })
+            .then(response => response.json())
+            .then(dataJson => {
+                // Chỉ giữ lại những bộ thủ có trong data.json
+                validBoThuList = boThuList.filter(item => item.bo_thu in dataJson);
+
+                const container = document.getElementById("boThuContainer");
+
+                validBoThuList.forEach(item => {
+                    let div = document.createElement("div");
+                    div.innerHTML = `${item.stt} / <b>${item.bo_thu}</b> / ${item.phien_am} /: ${item.y_nghia}`;
+                    div.classList.add("boThuItem");
+
+                    // Khi chọn từ danh sách
+                    div.onclick = () => {
+                        if (selectedBoThuList.includes(item.bo_thu)) {
+                            // Bỏ chọn nếu đã chọn trước đó
+                            selectedBoThuList = selectedBoThuList.filter(bo => bo !== item.bo_thu);
+                            div.classList.remove("selected");
+                        } else {
+                            // Thêm vào danh sách chọn
+                            selectedBoThuList.push(item.bo_thu);
+                            div.classList.add("selected");
+                        }
+                        updateInputAndButton();
+                    };
+
+                    container.appendChild(div);
+                });
+            })
+            .catch(error => console.error("Lỗi khi tải dữ liệu:", error));
+
+        // Cập nhật ô nhập và trạng thái nút "Bắt đầu"
+        function updateInputAndButton() {
+            document.getElementById("boThuInput").value = selectedBoThuList.join(",");
+            document.getElementById("startBtn").disabled = selectedBoThuList.length === 0;
+            updateSelectAllButton();
+        }
+
+        // Khi người dùng nhập vào ô input
+        document.getElementById("boThuInput").addEventListener("input", function () {
+            let inputValues = this.value.split(",").map(item => item.trim());
+            selectedBoThuList = inputValues.filter(value => validBoThuList.some(item => item.bo_thu === value));
+            updateScrollSelection();
+            document.getElementById("startBtn").disabled = selectedBoThuList.length === 0;
+        });
+
+        // Cập nhật màu sắc trong danh sách khi nhập từ ô input
+        function updateScrollSelection() {
+            document.querySelectorAll(".boThuItem").forEach(item => {
+                let boThu = item.innerHTML.split(" / ")[1].replace("<b>", "").replace("</b>", "").trim();
+                if (selectedBoThuList.includes(boThu)) {
+                    item.classList.add("selected");
+                } else {
+                    item.classList.remove("selected");
+                }
+            });
+            updateSelectAllButton();
+        }
+
+        // Xử lý nút "Chọn Tất Cả"
+        document.getElementById("selectAllBtn").onclick = function () {
+            if (selectedBoThuList.length < validBoThuList.length) {
+                selectedBoThuList = validBoThuList.map(item => item.bo_thu);
+            } else {
+                selectedBoThuList = [];
+            }
+            updateScrollSelection();
+            updateInputAndButton();
+        };
+
+        // Cập nhật trạng thái nút "Chọn Tất Cả"
+        function updateSelectAllButton() {
+            let selectAllBtn = document.getElementById("selectAllBtn");
+            if (selectedBoThuList.length === validBoThuList.length) {
+                selectAllBtn.textContent = "Clear";
+                selectAllBtn.classList.add("active");
+            } else {
+                selectAllBtn.textContent = "All";
+                selectAllBtn.classList.remove("active");
+            }
+        }
+
+        // Xử lý nút "Bắt đầu"
+        document.getElementById("startBtn").onclick = () => {
+            if (selectedBoThuList.length > 0) {
+                window.location.href = `quiz.html?boThu=${selectedBoThuList.join(",")}`;
+            } else {
+                alert("Vui lòng chọn ít nhất một bộ thủ!");
+            }
+        };
+
+    </script>
+</body>
+
+</html>

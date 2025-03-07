@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Hán tự</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+
+        .question {
+            font-size: 28px;
+            margin: 0;
+            /* Không có khoảng cách trên dưới */
+            font-weight: bold;
+        }
+
+        h2 {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1;
+        }
+
+
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+            width: 90vw;
+            max-width: 600px;
+            height: 50vh;
+            max-height: 300px;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            width: 100%;
+            height: 100%;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .option:hover {
+            background: #d9d9d9;
+            transform: scale(1.05);
+        }
+
+        .option.correct {
+            background: #28a745 !important;
+            color: white;
+            border-color: #1e7e34;
+        }
+
+        .option.wrong {
+            background: #dc3545 !important;
+            color: white;
+            border-color: #a71d2a;
+        }
+
+
+        .navBtn {
+            padding: 12px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .navBtn:hover {
+            background: #0056b3;
+        }
+
+        .navBtn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            /* Hoặc đặt giá trị cố định như max-width: 600px */
+            max-width: 600px;
+            /* Giữ cố định chiều rộng */
+            background: white;
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #explanation {
+            font-size: 20px;
+            font-style: italic;
+            color: #555;
+            min-height: 50px;
+            /* Giữ cố định chiều cao tối thiểu */
+            max-width: 100%;
+            /* Không vượt quá giới hạn */
+            word-wrap: break-word;
+            /* Tự động xuống dòng khi vượt quá chiều rộng */
+            text-align: center;
+            padding: 5px;
+        }
+
+
+        .history-menu {
+            position: fixed;
+            top: 70px;
+            /* Điều chỉnh khoảng cách so với điểm số */
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+            max-height: 200px;
+            width: 350px;
+            /* Độ rộng phù hợp */
+            overflow-y: auto;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 2 cột */
+            gap: 5px;
+            /* Khoảng cách giữa các ô */
+        }
+
+        .history-item {
+            background: #f8f8f8;
+            padding: 8px;
+            border-radius: 3px;
+            text-align: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .history-item:hover {
+            background: #e0e0e0;
+        }
+
+
+
+        #menuButton {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* /////////////// */
+        .back-container {
+            position: fixed;
+            top: 10px;
+            right: 70px;
+            z-index: 1001;
+            /* Đảm bảo không bị che */
+        }
+
+        /* Nút "Quay về mới nhất" */
+        #backToLatestBtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            font-size: 21px;
+            cursor: pointer;
+            border-radius: 5px;
+            white-space: nowrap;
+            /* Tránh xuống dòng */
+        }
+
+        #backToLatestBtn:hover {
+            background-color: #2980b9;
+        }
+
+
+
+        /* Nút "Home" */
+        #homeButton {
+            position: fixed;
+            /* Giữ cố định trên màn hình */
+            top: 10px;
+            /* Khoảng cách từ trên xuống */
+            left: 120px;
+            /* Khoảng cách từ phải sang (bạn có thể tự chỉnh) */
+            background-color: #2ecc71;
+            /* Xanh lá */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            /* Điều chỉnh padding */
+            font-size: 18px;
+            /* Kích thước chữ hợp lý */
+            cursor: pointer;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+
+        #homeButton:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nút "Home" (ở giữa) -->
+    <div class="home-container">
+        <button id="homeButton">🏠 Home</button>
+    </div>
+    <div class="back-container">
+        <button id="backToLatestBtn">⏮</button>
+    </div>
+    <div style="position: fixed; top: 10px; right: 10px;">
+
+        <button id="menuButton">☰</button>
+        <div class="history-menu" id="historyMenu"></div>
+    </div>
+
+    <div class="fixed-bottom">
+        <div id="quizContainer" class="quiz-container">
+            <div class="question" id="question"></div>
+
+            <div class="options-container" id="answers"></div>
+
+            <div id="explanation"></div>
+
+            <button class="navBtn" id="prevBtn" disabled>&lt; Trước</button>
+            <button class="navBtn" id="nextBtn" disabled>Tiếp &gt;</button>
+        </div>
+    </div>
+
+    <script>
+        let data = [];
+        let currentQuestion = 0;
+        let latestQuestion = 0;
+        let history = [];
+        let score = 0; // Biến lưu điểm
+
+        // Lấy danh sách bộ thủ từ URL
+        let boThuList = new URLSearchParams(window.location.search).get("boThu");
+        if (boThuList) {
+            boThuList = boThuList.split(",");
+        } else {
+            document.getElementById("question").innerHTML = "Không có bộ thủ nào được chọn!";
+            throw new Error("Không có bộ thủ nào được chọn!");
+        }
+
+        // Fetch dữ liệu từ data.json
+        fetch("data.json")
+            .then(response => response.json())
+            .then(json => {
+                boThuList.forEach(boThu => {
+                    if (json[boThu]) {
+                        data = data.concat(json[boThu]);
+                    }
+                });
+
+                if (data.length < 4) {
+                    document.getElementById("question").innerHTML = "Không đủ dữ liệu để tạo câu hỏi!";
+                    return;
+                }
+
+                shuffleArray(data); // Trộn câu hỏi
+                loadQuestion(); // Hiển thị câu hỏi đầu tiên
+                updateScoreDisplay(); // Cập nhật điểm số ban đầu
+            })
+            .catch(error => {
+                console.error("Lỗi khi tải dữ liệu:", error);
+                document.getElementById("question").innerHTML = "Lỗi khi tải dữ liệu!";
+            });
+
+        // Xử lý nút Previous
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion(); // Đổi sang câu hỏi trước đó
+            }
+        });
+
+        // Xử lý nút Next
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            if (currentQuestion < latestQuestion) {
+                currentQuestion++;
+                loadQuestion(); // Đổi sang câu hỏi tiếp theo
+            }
+        });
+
+
+        // Mở menu lịch sử
+        document.getElementById("menuButton").addEventListener("click", function () {
+            let menu = document.getElementById("historyMenu");
+
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+                menu.style.left = "50%"; // Giữ căn giữa
+                menu.style.top = "70px"; // Giữ đúng vị trí dưới score
+                menu.style.transform = "translateX(-50%)"; // Đảm bảo căn giữa theo trục ngang
+            }
+        });
+
+
+
+        // Hàm trộn mảng
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function loadQuestion() {
+            // Xóa lời giải thích khi chuyển sang câu mới
+            document.getElementById("explanation").textContent = "";
+
+            if (data.length === 0) {
+                document.getElementById("question").innerHTML = "❌ Không có dữ liệu!";
+                return;
+            }
+
+            let item;
+            let allAnswers;
+            let isReviewing = currentQuestion < latestQuestion; // Nếu currentQuestion < latestQuestion => Đang xem lại lịch sử
+
+            if (history[currentQuestion]) {
+                // Nếu câu hỏi đã có trong lịch sử, lấy lại câu cũ
+                item = history[currentQuestion].question;
+                allAnswers = history[currentQuestion].answers;
+            } else {
+                // Chọn ngẫu nhiên một câu hỏi mới
+                let randomIndex = Math.floor(Math.random() * data.length);
+                item = data[randomIndex];
+
+                let correctAnswer = item["Ý nghĩa"];
+
+                // Lấy ngẫu nhiên 3 đáp án sai từ data (không bao gồm câu hỏi hiện tại)
+                let wrongAnswers = [];
+                while (wrongAnswers.length < 3) {
+                    let randomWrongIndex = Math.floor(Math.random() * data.length);
+                    let randomWrongAnswer = data[randomWrongIndex]["Ý nghĩa"];
+                    if (randomWrongAnswer !== correctAnswer && !wrongAnswers.includes(randomWrongAnswer)) {
+                        wrongAnswers.push(randomWrongAnswer);
+                    }
+                }
+
+                allAnswers = [correctAnswer, ...wrongAnswers];
+                shuffleArray(allAnswers); // Trộn các đáp án
+
+                // Lưu câu hỏi vào lịch sử
+                history[currentQuestion] = {
+                    question: item,
+                    answers: allAnswers,
+                    selected: null,
+                    correct: true,
+                    firstAttempt: false,
+                    explanation: item["Ví dụ"] || "Không có giải thích."
+                };
+            }
+
+            // Hiển thị câu hỏi và đáp án
+            document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} (${item["Độ phổ biến"]})</h2>`;
+
+            let answers = document.getElementById("answers");
+            answers.innerHTML = "";
+
+            allAnswers.forEach(ans => {
+                let div = document.createElement("div");
+                div.classList.add("option");
+                div.textContent = ans;
+
+                // 🛠 Nếu đang xem lại lịch sử (currentQuestion < latestQuestion), khóa click
+                if (!isReviewing) {
+                    div.onclick = () => handleAnswerClick(div, ans, item["Ý nghĩa"], item["Ví dụ"]);
+                } else {
+                    div.style.pointerEvents = "none"; // Khóa click
+                    // div.style.opacity = "0.6"; // Làm mờ để hiển thị đây là lịch sử
+                }
+
+                // Đánh dấu đáp án đã chọn trước đó
+                if (history[currentQuestion].selected === ans) {
+                    div.classList.add(history[currentQuestion].correct ? "correct" : "wrong");
+                }
+
+                answers.appendChild(div);
+            });
+
+            // 🛠 Chỉ hiển thị lời giải thích nếu đã trả lời đúng hoặc khi xem lại lịch sử
+            if (history[currentQuestion].selected && history[currentQuestion].correct) {
+                document.getElementById("explanation").textContent = history[currentQuestion].explanation;
+            }
+
+            // Cập nhật trạng thái nút
+            document.getElementById("prevBtn").disabled = currentQuestion === 0;
+            document.getElementById("nextBtn").disabled = currentQuestion >= latestQuestion;
+
+            updateHistoryMenu();
+        }
+
+
+
+
+        // Xử lý khi chọn đáp án
+        function handleAnswerClick(div, selectedAnswer, correctAnswer, example) {
+            let questionData = history[currentQuestion]; // Lấy dữ liệu câu hỏi từ history
+
+            if (!questionData.selected) {
+                questionData.selected = selectedAnswer;
+                questionData.correct = selectedAnswer === correctAnswer;
+                questionData.firstAttempt = true;
+
+                // ✅ Chỉ cộng điểm nếu chọn đúng ngay lần đầu
+                if (questionData.correct) {
+                    score++;
+                }
+            } else {
+                questionData.correct = selectedAnswer === correctAnswer;
+                questionData.selected = selectedAnswer;
+            }
+
+            let answerOptions = document.querySelectorAll(".option");
+            if (selectedAnswer === correctAnswer) {
+                div.classList.add("correct");
+                document.getElementById("explanation").textContent = `${example}`;
+                document.getElementById("nextBtn").disabled = false;
+
+                if (currentQuestion === latestQuestion) {
+                    latestQuestion++;
+                }
+
+
+                answerOptions.forEach(option => {
+                    option.onclick = null;
+                    option.style.pointerEvents = "none";
+                });
+
+                setTimeout(() => {
+                    currentQuestion++;
+                    loadQuestion(); // Chuyển sang câu hỏi tiếp theo
+                    updateScoreDisplay();
+                }, 600);
+            } else {
+                div.classList.add("wrong");
+                // document.getElementById("explanation").textContent = `❌ Sai! Đáp án đúng là: ${correctAnswer}`;
+                document.getElementById("explanation").textContent = "";
+
+            }
+
+            updateHistoryMenu();
+        }
+
+
+
+        // Cập nhật menu lịch sử
+        // Cập nhật menu lịch sử
+        // Cập nhật menu lịch sử
+        function updateHistoryMenu() {
+            let menu = document.getElementById("historyMenu");
+            menu.innerHTML = ""; // Xóa nội dung cũ
+
+            let grid = document.createElement("div");
+            grid.className = "history-grid";
+
+            history.forEach((entry, index) => {
+                let item = document.createElement("div");
+                item.className = "history-item";
+
+                // ✅ Hiển thị dạng "Chữ Hán - Ý nghĩa"
+                let chuHan = entry.question["Chữ Hán"] || "N/A";
+                let yNghia = entry.question["Ý nghĩa"] || "Không rõ";
+                item.innerText = `${chuHan} - ${yNghia}`;
+
+                // ✅ Chỉ đánh dấu đỏ nếu lần đầu chọn sai
+                if (!entry.correct && entry.firstAttempt) {
+                    entry.markWrongFirstAttempt = true;
+                }
+
+                // ✅ Xác định màu dựa trên kết quả lần đầu
+                if (entry.markWrongFirstAttempt) {
+                    item.style.background = "#FF0000"; // Đỏ nếu sai ngay lần đầu
+                    item.style.color = "white";
+                } else if (entry.correct) {
+                    item.style.background = "#4CAF50"; // Xanh lá nếu chọn đúng ngay lần đầu
+                    item.style.color = "white";
+                } else {
+                    item.style.background = "#FFFFFF"; // Trắng nếu chưa chọn
+                    item.style.color = "black";
+                }
+
+                // ✅ Khi bấm vào lịch sử thì hiển thị lại câu hỏi
+                item.onclick = () => {
+                    currentQuestion = index;
+                    loadQuestion(index);
+                };
+
+                grid.appendChild(item);
+            });
+
+            menu.appendChild(grid);
+        }
+
+
+
+
+
+
+
+
+
+        function updateScoreDisplay() {
+            let scoreElement = document.getElementById("scoreDisplay");
+
+            if (!scoreElement) {
+                scoreElement = document.createElement("div");
+                scoreElement.id = "scoreDisplay";
+                scoreElement.style.position = "absolute";
+                scoreElement.style.top = "10px";
+                scoreElement.style.left = "50%";
+                scoreElement.style.transform = "translateX(-50%)";
+                scoreElement.style.background = "#fff";
+                scoreElement.style.padding = "10px";
+                scoreElement.style.border = "1px solid #000";
+                scoreElement.style.fontSize = "20px";
+                document.body.appendChild(scoreElement);
+            }
+
+            let totalAnswered = history.filter(q => q.firstAttempt !== undefined).length;
+            let percentage = totalAnswered > 0 ? ((score / totalAnswered) * 100).toFixed(2) : 0;
+
+            scoreElement.innerText = `Điểm: ${score}/${totalAnswered} (${percentage}%)`;
+        }
+
+
+
+        document.getElementById("backToLatestBtn").onclick = function () {
+            currentQuestion = latestQuestion; // Cập nhật về câu mới nhất
+            loadQuestion(); // Hiển thị lại câu hỏi
+        };
+        document.getElementById("homeButton").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+    </script>
+</body>
+
+
+</html>
