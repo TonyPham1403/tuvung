@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/15 * * * *' # Chạy mỗi 3 phút
+    - cron: '*/1500 * * * *' # Chạy mỗi 3 phút
   workflow_dispatch: # Cho phép chạy thủ công
 
 jobs:
