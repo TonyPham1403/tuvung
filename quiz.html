@@ -296,6 +296,16 @@
             "TRUNG BÌNH": '<span style="color:#E67E22; font-size: 20px;">🟠</span>',
             "THẤP": '<span style="color:#E74C3C; font-size: 20px;">🔴</span>'
         };
+
+        // Tạo một đối tượng chỉ chứa mã màu hex (tách riêng với popularityColors)
+        let colorHexMap = {
+            "RẤT CAO": "#4CAF50",
+            "CAO": "#3498DB",
+            "TRUNG BÌNH": "#E67E22",
+            "THẤP": "#E74C3C"
+        };
+
+
         // Lấy danh sách bộ thủ từ URL
         let boThuList = new URLSearchParams(window.location.search).get("boThu");
         if (boThuList) {
@@ -418,9 +428,13 @@
                 };
             }
 
-            // Hiển thị câu hỏi và đáp án
-            // document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} (${item["Độ phổ biến"]})</h2>`;
-            document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} ${popularityColors[item["Độ phổ biến"]]}</h2>`;
+            // Xác định màu dựa vào độ phổ biến
+            let textColor = popularityColors[item["Độ phổ biến"]] || "black";
+
+            // Hiển thị câu hỏi và đáp án (Chữ Hán, Phiên âm có màu)
+            document.getElementById("question").innerHTML =
+                `<h2>${item["Chữ Hán"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>`;
+
 
             let answers = document.getElementById("answers");
             answers.innerHTML = "";
@@ -446,9 +460,30 @@
                 answers.appendChild(div);
             });
 
+            // 🔥 In đậm và đổi màu **Chữ Hán, Phiên âm, Ý nghĩa** trong phần giải thích
+            let explanationText = item["Ví dụ"] || "Không có giải thích.";
+            textColor = colorHexMap[item["Độ phổ biến"]] || "black";
+            // In đậm + đổi màu Chữ Hán trong phần giải thích
+            explanationText = explanationText.replace(
+                new RegExp(item["Chữ Hán"], "g"),
+                `<b style="color: ${textColor};">${item["Chữ Hán"]}</b>`
+            );
+
+            // In đậm + đổi màu toàn bộ Phiên âm
+            explanationText = explanationText.replace(
+                new RegExp(item["Phiên âm"], "gi"),
+                `<b style="color: ${textColor};">${item["Phiên âm"]}</b>`
+            );
+
+            // In đậm + đổi màu toàn bộ Ý nghĩa
+            explanationText = explanationText.replace(
+                new RegExp(item["Ý nghĩa"], "gi"),
+                `<b style="color: ${textColor};">${item["Ý nghĩa"]}</b>`
+            );
+
             // 🛠 Chỉ hiển thị lời giải thích nếu đã trả lời đúng hoặc khi xem lại lịch sử
             if (history[currentQuestion].selected && history[currentQuestion].correct) {
-                document.getElementById("explanation").textContent = history[currentQuestion].explanation;
+                document.getElementById("explanation").innerHTML = explanationText;
             }
 
             // Cập nhật trạng thái nút
@@ -457,6 +492,22 @@
 
             updateHistoryMenu();
         }
+
+
+        function formatExplanation(explanation, item) {
+            if (!explanation) return "Không có giải thích.";
+
+            let boldWords = [item["Chữ Hán"], item["Phiên âm"], item["Ý nghĩa"]];
+            boldWords.forEach(word => {
+                if (word) {
+                    let regex = new RegExp(word, "gi");
+                    explanation = explanation.replace(regex, `<b>${word}</b>`);
+                }
+            });
+
+            return explanation;
+        }
+
 
 
 
@@ -481,7 +532,9 @@
             let answerOptions = document.querySelectorAll(".option");
             if (selectedAnswer === correctAnswer) {
                 div.classList.add("correct");
-                document.getElementById("explanation").textContent = `${example}`;
+                // document.getElementById("explanation").textContent = `${example}`;
+                document.getElementById("explanation").innerHTML = highlightKeywords(example, history[currentQuestion].question);
+
                 document.getElementById("nextBtn").disabled = false;
 
                 if (currentQuestion === latestQuestion) {
@@ -508,6 +561,34 @@
 
             updateHistoryMenu();
         }
+
+        function highlightKeywords(explanation, item) {
+            if (!explanation) return "Không có giải thích.";
+            if (!item) return explanation;
+
+            // ✅ Lấy mã màu từ colorHexMap thay vì popularityColors
+            let popularityColor = colorHexMap[item["Độ phổ biến"]] || "#000"; // Mặc định màu đen nếu không có
+
+            let boldStyled = (word) => `<b style="color: ${popularityColor};">${word}</b>`;
+
+            // 🔹 In đậm & đổi màu Chữ Hán
+            explanation = explanation.replace(new RegExp(item["Chữ Hán"], "g"), boldStyled(item["Chữ Hán"]));
+
+            // 🔹 In đậm & đổi màu từng từ trong phiên âm
+            let pinyinWords = item["Phiên âm"].split(" ");
+            pinyinWords.forEach(pinyin => {
+                explanation = explanation.replace(new RegExp(pinyin, "gi"), boldStyled(pinyin));
+            });
+
+            // 🔹 In đậm & đổi màu từng từ trong ý nghĩa
+            let meaningWords = item["Ý nghĩa"].split("/");
+            meaningWords.forEach(meaning => {
+                explanation = explanation.replace(new RegExp(meaning.trim(), "gi"), boldStyled(meaning.trim()));
+            });
+
+            return explanation;
+        }
+
 
 
 
