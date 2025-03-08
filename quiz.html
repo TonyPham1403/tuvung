@@ -242,6 +242,18 @@
         #homeButton:hover {
             background-color: #27ae60;
         }
+
+        .popularity-badge {
+            font-size: 0.5em;
+            /* Giảm kích thước emoji */
+        }
+
+        .very-high {
+            color: #4CAF50;
+            /* Xanh lá đậm */
+            font-size: 0.9em;
+            /* Thu nhỏ emoji nếu cần */
+        }
     </style>
 </head>
 
@@ -278,7 +290,12 @@
         let latestQuestion = 0;
         let history = [];
         let score = 0; // Biến lưu điểm
-
+        let popularityColors = {
+            "RẤT CAO": '<span style="color:#4CAF50; font-size: 20px;">🟢</span>',
+            "CAO": '<span style="color:#3498DB; font-size: 20px;">🔵</span>',
+            "TRUNG BÌNH": '<span style="color:#E67E22; font-size: 20px;">🟠</span>',
+            "THẤP": '<span style="color:#E74C3C; font-size: 20px;">🔴</span>'
+        };
         // Lấy danh sách bộ thủ từ URL
         let boThuList = new URLSearchParams(window.location.search).get("boThu");
         if (boThuList) {
@@ -402,7 +419,8 @@
             }
 
             // Hiển thị câu hỏi và đáp án
-            document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} (${item["Độ phổ biến"]})</h2>`;
+            // document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} (${item["Độ phổ biến"]})</h2>`;
+            document.getElementById("question").innerHTML = `<h2>${item["Chữ Hán"]} ${popularityColors[item["Độ phổ biến"]]}</h2>`;
 
             let answers = document.getElementById("answers");
             answers.innerHTML = "";
@@ -439,7 +457,6 @@
 
             updateHistoryMenu();
         }
-
 
 
 
