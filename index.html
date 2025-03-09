@@ -125,7 +125,7 @@
         let validBoThuList = [];
 
         // Đọc danh sách bộ thủ từ bothu.json
-        fetch("bothu.json")
+        fetch("bothu.json?t=${new Date().getTime()}")
             .then(response => response.json())
             .then(bothuData => {
                 boThuList = bothuData; // Lưu danh sách bộ thủ đầy đủ
