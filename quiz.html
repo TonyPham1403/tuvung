@@ -19,7 +19,12 @@
             background-color: #f5f5f5;
         }
 
-
+        .question {
+            font-size: 28px;
+            margin: 0;
+            /* Không có khoảng cách trên dưới */
+            font-weight: bold;
+        }
 
         h2 {
             margin: 0 !important;
@@ -253,7 +258,7 @@
             font-style: italic;
             color: #555;
             text-align: center;
-            width: 343px;
+            width: 320px;
             /* Chiều rộng cố định */
             height: 60px;
             /* Chiều cao cố định */
@@ -314,53 +319,35 @@
             cursor: not-allowed;
         }
 
-
         .question-container {
             display: flex;
-            align-items: center;
-            /* Căn giữa theo chiều dọc */
             justify-content: center;
             /* Căn giữa nội dung */
-            /* Đưa nút về bên phải */
-            width: 100%;
+            align-items: center;
             position: relative;
-        }
-
-        .question {
-            font-size: 28px;
-            margin: 0;
-            /* Không có khoảng cách trên dưới */
-            font-weight: bold;
-            text-align: center;
-        }
-
-        #copyButton {
-            padding: 8px 12px;
-            font-size: 8px;
-            cursor: pointer;
-            margin-left: 10px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: 0.3s ease;
-        }
-
-        #copyButton:hover {
-            background: #218838;
+            width: 100%;
         }
 
         .copy-btn {
             position: absolute;
             right: 0;
+            /* Giữ nút copy ở góc phải */
+            background: none;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 5px;
         }
 
+
+
+
         .copy-btn:hover {
-            background: #e0e0e0;
+            background: #218838;
         }
 
         .copy-btn:active {
-            background: #d6d6d6;
+            background: #1e7e34;
         }
     </style>
 </head>
@@ -381,11 +368,7 @@
 
     <div class="fixed-bottom">
         <div id="quizContainer" class="quiz-container">
-            <!-- <div class="question" id="question"></div> -->
-            <div class="question-container">
-                <div class="question" id="question"></div>
-<!--                 <button id="copyButton" class="copy-btn">📋 Copy</button> -->
-            </div>
+            <div class="question" id="question"></div>
 
             <div class="options-container" id="answers"></div>
 
@@ -548,9 +531,23 @@
             let textColor = popularityColors[item["Độ phổ biến"]] || "black";
 
             // Hiển thị câu hỏi và đáp án (Chữ Hán, Phiên âm có màu)
-            document.getElementById("question").innerHTML =
-                `<h2>${item["Chữ Hán"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>`;
+            document.getElementById("question").innerHTML = `
+    <div class="question-container" style="position: relative; text-align: center;">
+        <h2 style="display: inline-block;">${item["Chữ Hán"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>
+        <button id="copyButton" class="copy-btn" style="position: absolute; right: 0;">📋Copy</button>
+    </div>
+`;
 
+
+
+            document.getElementById("copyButton").onclick = function () {
+                let hanzi = item["Chữ Hán"].split(" ")[0]; // Lấy phần trước khoảng trắng
+                navigator.clipboard.writeText(hanzi).then(() => {
+                    let btn = document.getElementById("copyButton");
+                    btn.textContent = "✅Copied";
+                    setTimeout(() => (btn.textContent = "📋Copy"), 1500);
+                });
+            };
 
             let answers = document.getElementById("answers");
             answers.innerHTML = "";
@@ -796,31 +793,6 @@
         document.getElementById("homeButton").addEventListener("click", function () {
             window.location.href = "index.html";
         });
-
-        document.getElementById("copyButton").addEventListener("click", function () {
-            const copyButton = this; // Tham chiếu đến nút bấm
-            const questionText = document.getElementById("question").innerText;
-
-            // Lấy chữ Hán trước dấu khoảng trắng
-            const chineseText = questionText.split(" ")[0].trim();
-
-            // Sao chép vào clipboard
-            navigator.clipboard.writeText(chineseText).then(() => {
-                copyButton.innerText = "✔ Copied"; // Đổi nội dung nút
-                copyButton.style.background = "#d1e7dd"; // Đổi màu xanh nhạt (giống ChatGPT)
-
-                // Sau 2 giây, trở về trạng thái ban đầu
-                setTimeout(() => {
-                    copyButton.innerText = "📋 Copy";
-                    copyButton.style.background = "";
-                }, 2000);
-            }).catch(err => {
-                console.error("Lỗi khi sao chép:", err);
-            });
-        });
-
-
-
 
     </script>
 </body>
