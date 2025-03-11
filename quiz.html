@@ -19,12 +19,7 @@
             background-color: #f5f5f5;
         }
 
-        .question {
-            font-size: 28px;
-            margin: 0;
-            /* Không có khoảng cách trên dưới */
-            font-weight: bold;
-        }
+
 
         h2 {
             margin: 0 !important;
@@ -258,7 +253,7 @@
             font-style: italic;
             color: #555;
             text-align: center;
-            width: 320px;
+            width: 343px;
             /* Chiều rộng cố định */
             height: 60px;
             /* Chiều cao cố định */
@@ -318,6 +313,54 @@
             background: #ccc;
             cursor: not-allowed;
         }
+
+
+        .question-container {
+            display: flex;
+            align-items: center;
+            /* Căn giữa theo chiều dọc */
+            justify-content: center;
+            /* Căn giữa nội dung */
+            /* Đưa nút về bên phải */
+            width: 100%;
+            position: relative;
+        }
+
+        .question {
+            font-size: 30px;
+            text-align: center;
+            max-width: 80%;
+            /* Giới hạn độ rộng để không bị kéo dài */
+        }
+
+        #copyButton {
+            padding: 8px 12px;
+            font-size: 8px;
+            cursor: pointer;
+            margin-left: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        #copyButton:hover {
+            background: #218838;
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 0;
+        }
+
+        .copy-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .copy-btn:active {
+            background: #d6d6d6;
+        }
     </style>
 </head>
 
@@ -337,7 +380,11 @@
 
     <div class="fixed-bottom">
         <div id="quizContainer" class="quiz-container">
-            <div class="question" id="question"></div>
+            <!-- <div class="question" id="question"></div> -->
+            <div class="question-container">
+                <div class="question" id="question"></div>
+                <button id="copyButton" class="copy-btn">📋 Copy</button>
+            </div>
 
             <div class="options-container" id="answers"></div>
 
@@ -748,6 +795,31 @@
         document.getElementById("homeButton").addEventListener("click", function () {
             window.location.href = "index.html";
         });
+
+        document.getElementById("copyButton").addEventListener("click", function () {
+            const copyButton = this; // Tham chiếu đến nút bấm
+            const questionText = document.getElementById("question").innerText;
+
+            // Lấy chữ Hán trước dấu khoảng trắng
+            const chineseText = questionText.split(" ")[0].trim();
+
+            // Sao chép vào clipboard
+            navigator.clipboard.writeText(chineseText).then(() => {
+                copyButton.innerText = "✔ Copied"; // Đổi nội dung nút
+                copyButton.style.background = "#d1e7dd"; // Đổi màu xanh nhạt (giống ChatGPT)
+
+                // Sau 2 giây, trở về trạng thái ban đầu
+                setTimeout(() => {
+                    copyButton.innerText = "📋 Copy";
+                    copyButton.style.background = "";
+                }, 2000);
+            }).catch(err => {
+                console.error("Lỗi khi sao chép:", err);
+            });
+        });
+
+
+
 
     </script>
 </body>
