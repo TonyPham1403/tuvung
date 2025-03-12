@@ -154,14 +154,6 @@
         },
         {
             "STT": 20,
-            "Chữ Hán": "亯",
-            "Phiên âm": "xiǎng",
-            "Ý nghĩa": "Hưởng thụ (cổ)",
-            "Độ phổ biến": "THẤP",
-            "Ví dụ": "他喜欢亯受美食。 (Tā xǐhuān xiǎngshòu měishí.) – Anh ấy thích thưởng thức ẩm thực."
-        },
-        {
-            "STT": 21,
             "Chữ Hán": "夜",
             "Phiên âm": "yè",
             "Ý nghĩa": "Đêm",
@@ -169,7 +161,7 @@
             "Ví dụ": "我喜欢在夜晚读书。 (Wǒ xǐhuān zài yèwǎn dúshū.) – Tôi thích đọc sách vào ban đêm."
         },
         {
-            "STT": 22,
+            "STT": 21,
             "Chữ Hán": "亳",
             "Phiên âm": "bó",
             "Ý nghĩa": "Địa danh (Bạc Châu)",
@@ -177,7 +169,7 @@
             "Ví dụ": "亳州是一个历史悠久的城市。 (Bózhōu shì yí gè lìshǐ yōujiǔ de chéngshì.) – Bạc Châu là một thành phố có lịch sử lâu đời."
         },
         {
-            "STT": 23,
+            "STT": 22,
             "Chữ Hán": "亵",
             "Phiên âm": "xiè",
             "Ý nghĩa": "Khinh nhờn, khinh bỉ",
@@ -185,7 +177,7 @@
             "Ví dụ": "不要亵渎神圣。 (Bú yào xièdú shénshèng.) – Đừng báng bổ điều thiêng liêng."
         },
         {
-            "STT": 24,
+            "STT": 23,
             "Chữ Hán": "亶",
             "Phiên âm": "dǎn",
             "Ý nghĩa": "Chân thành",
@@ -193,7 +185,7 @@
             "Ví dụ": "他说话很亶诚。 (Tā shuōhuà hěn dǎnchéng.) – Anh ấy nói chuyện rất chân thành."
         },
         {
-            "STT": 25,
+            "STT": 24,
             "Chữ Hán": "亷",
             "Phiên âm": "lián",
             "Ý nghĩa": "Liêm",
@@ -201,7 +193,7 @@
             "Ví dụ": "他是个亷洁的官员。 (Tā shì gè liánjié de guānyuán.) – Ông ấy là một quan chức liêm chính."
         },
         {
-            "STT": 26,
+            "STT": 25,
             "Chữ Hán": "亸",
             "Phiên âm": "duǒ",
             "Ý nghĩa": "Rũ xuống, lệch",
@@ -209,15 +201,7 @@
             "Ví dụ": "他的肩膀有点亸。 (Tā de jiānbǎng yǒudiǎn duǒ.) – Vai của anh ấy hơi lệch."
         },
         {
-            "STT": 27,
-            "Chữ Hán": "亹",
-            "Phiên âm": "wěi",
-            "Ý nghĩa": "Cố gắng, kiên trì",
-            "Độ phổ biến": "THẤP",
-            "Ví dụ": "亹亹不倦地学习。 (Wěi wěi bú juàn de xuéxí.) – Cố gắng học tập không biết mệt mỏi."
-        },
-        {
-            "STT": 28,
+            "STT": 26,
             "Chữ Hán": "亹",
             "Phiên âm": "wěi",
             "Ý nghĩa": "Cố gắng, kiên trì, chăm chỉ",
