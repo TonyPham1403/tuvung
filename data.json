@@ -4,15 +4,15 @@
             "STT": 1,
             "Chữ Hán": "京",
             "Phiên âm": "jīng",
-            "Ý nghĩa": "Kinh đô",
+            "Ý nghĩa": "thủ đô",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "北京是中国的京城。 (Běijīng shì Zhōngguó de jīngchéng.) – Bắc Kinh là kinh đô của Trung Quốc."
+            "Ví dụ": "北京是中国的京城。 (Běijīng shì Zhōngguó de jīngchéng.) – Bắc Kinh là thủ đô của Trung Quốc."
         },
         {
             "STT": 2,
             "Chữ Hán": "交",
             "Phiên âm": "jiāo",
-            "Ý nghĩa": "Giao/Nộp",
+            "Ý nghĩa": "Giao/Nộp/Giao tiếp",
             "Độ phổ biến": "RẤT CAO",
             "Ví dụ": "请交作业。 (Qǐng jiāo zuòyè.) – Vui lòng nộp bài tập."
         },
@@ -28,9 +28,9 @@
             "STT": 4,
             "Chữ Hán": "亡",
             "Phiên âm": "wáng",
-            "Ý nghĩa": "Mất/Chết",
+            "Ý nghĩa": "Chết",
             "Độ phổ biến": "TRUNG BÌNH",
-            "Ví dụ": "他在战争中亡了。 (Tā zài zhànzhēng zhōng wáng le.) – Anh ấy đã mất trong chiến tranh."
+            "Ví dụ": "他在战争中亡了。 (Tā zài zhànzhēng zhōng wáng le.) – Anh ấy đã chết trong chiến tranh."
         },
         {
             "STT": 5,
@@ -44,7 +44,7 @@
             "STT": 6,
             "Chữ Hán": "亭",
             "Phiên âm": "tíng",
-            "Ý nghĩa": "Đình (chỗ nghỉ)",
+            "Ý nghĩa": "Đình",
             "Độ phổ biến": "THẤP",
             "Ví dụ": "公园里有一个亭子。 (Gōngyuán lǐ yǒu yí gè tíngzi.) – Trong công viên có một cái đình."
         },
@@ -76,9 +76,9 @@
             "STT": 10,
             "Chữ Hán": "亲",
             "Phiên âm": "qīn",
-            "Ý nghĩa": "Thân thiết",
+            "Ý nghĩa": "Người thân",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "他们关系很亲。 (Tāmen guānxì hěn qīn.) – Quan hệ của họ rất thân thiết."
+            "Ví dụ": "她是我的亲人。 (Tā shì wǒ de qīnrén.) – Cô ấy là người thân của tôi."
         },
         {
             "STT": 11,
@@ -90,30 +90,6 @@
         },
         {
             "STT": 12,
-            "Chữ Hán": "亭",
-            "Phiên âm": "tíng",
-            "Ý nghĩa": "Đình nghỉ",
-            "Độ phổ biến": "THẤP",
-            "Ví dụ": "湖边有个亭子。 (Hú biān yǒu gè tíngzi.) – Bên hồ có một cái đình."
-        },
-        {
-            "STT": 13,
-            "Chữ Hán": "亡",
-            "Phiên âm": "wáng",
-            "Ý nghĩa": "Tử vong",
-            "Độ phổ biến": "TRUNG BÌNH",
-            "Ví dụ": "他在事故中亡了。 (Tā zài shìgù zhōng wáng le.) – Anh ấy đã mất trong tai nạn."
-        },
-        {
-            "STT": 14,
-            "Chữ Hán": "亦",
-            "Phiên âm": "yì",
-            "Ý nghĩa": "Cũng",
-            "Độ phổ biến": "THẤP",
-            "Ví dụ": "她亦喜欢喝茶。 (Tā yì xǐhuān hē chá.) – Cô ấy cũng thích uống trà."
-        },
-        {
-            "STT": 15,
             "Chữ Hán": "享",
             "Phiên âm": "xiǎng",
             "Ý nghĩa": "Hưởng thụ",
@@ -121,44 +97,132 @@
             "Ví dụ": "让我们享受生活。 (Ràng wǒmen xiǎngshòu shēnghuó.) – Hãy cùng hưởng thụ cuộc sống."
         },
         {
-            "STT": 16,
-            "Chữ Hán": "产",
-            "Phiên âm": "chǎn",
-            "Ý nghĩa": "Sản phẩm",
+            "STT": 13,
+            "Chữ Hán": "充",
+            "Phiên âm": "chōng",
+            "Ý nghĩa": "Đầy đủ/Sung túc",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "这个工厂产很多电子产品。 (Zhège gōngchǎng chǎn hěn duō diànzǐ chǎnpǐn.) – Nhà máy này sản xuất nhiều sản phẩm điện tử."
+            "Ví dụ": "他的生活充满快乐。 (Tā de shēnghuó chōngmǎn kuàilè.) – Cuộc sống của anh ấy tràn đầy niềm vui."
+        },
+        {
+            "STT": 14,
+            "Chữ Hán": "亠",
+            "Phiên âm": "tóu",
+            "Ý nghĩa": "Đầu",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "这个字有亠部首。 (Zhège zì yǒu tóu bùshǒu.) – Chữ này có bộ Đầu."
+        },
+        {
+            "STT": 15,
+            "Chữ Hán": "卞",
+            "Phiên âm": "biàn",
+            "Ý nghĩa": "Vội vàng, nóng nảy",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "他说话很卞。 (Tā shuōhuà hěn biàn.) – Anh ấy nói chuyện rất nóng nảy."
+        },
+        {
+            "STT": 16,
+            "Chữ Hán": "亢",
+            "Phiên âm": "kàng",
+            "Ý nghĩa": "Cao, mạnh mẽ",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他性格很亢奋。 (Tā xìnggé hěn kàngfèn.) – Anh ấy có tính cách rất phấn khích."
         },
         {
             "STT": 17,
-            "Chữ Hán": "亭",
-            "Phiên âm": "tíng",
-            "Ý nghĩa": "Đình",
-            "Độ phổ biến": "THẤP",
-            "Ví dụ": "这个亭子很漂亮。 (Zhège tíngzi hěn piàoliang.) – Cái đình này rất đẹp."
+            "Chữ Hán": "亥",
+            "Phiên âm": "hài",
+            "Ý nghĩa": "Chi thứ 12 (Hợi)",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他属亥猪。 (Tā shǔ hài zhū.) – Anh ấy tuổi Hợi."
         },
         {
             "STT": 18,
-            "Chữ Hán": "交",
-            "Phiên âm": "jiāo",
-            "Ý nghĩa": "Giao tiếp",
-            "Độ phổ biến": "RẤT CAO",
-            "Ví dụ": "他们经常交朋友。 (Tāmen jīngcháng jiāo péngyǒu.) – Họ thường xuyên giao lưu kết bạn."
+            "Chữ Hán": "亨",
+            "Phiên âm": "hēng",
+            "Ý nghĩa": "Hanh thông/Thuận lợi",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "祝你亨通顺利。 (Zhù nǐ hēngtōng shùnlì.) – Chúc bạn mọi điều thuận lợi."
         },
         {
             "STT": 19,
-            "Chữ Hán": "亲",
-            "Phiên âm": "qīn",
-            "Ý nghĩa": "Người thân",
+            "Chữ Hán": "亩",
+            "Phiên âm": "mǔ",
+            "Ý nghĩa": "Mẫu (đơn vị đo diện tích)",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "她是我的亲人。 (Tā shì wǒ de qīnrén.) – Cô ấy là người thân của tôi."
+            "Ví dụ": "他家有十亩地。 (Tā jiā yǒu shí mǔ dì.) – Nhà anh ấy có 10 mẫu đất."
         },
         {
             "STT": 20,
-            "Chữ Hán": "京",
-            "Phiên âm": "jīng",
-            "Ý nghĩa": "Kinh thành",
+            "Chữ Hán": "亯",
+            "Phiên âm": "xiǎng",
+            "Ý nghĩa": "Hưởng thụ (cổ)",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "他喜欢亯受美食。 (Tā xǐhuān xiǎngshòu měishí.) – Anh ấy thích thưởng thức ẩm thực."
+        },
+        {
+            "STT": 21,
+            "Chữ Hán": "夜",
+            "Phiên âm": "yè",
+            "Ý nghĩa": "Đêm",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "这是古代的京城。 (Zhè shì gǔdài de jīngchéng.) – Đây là kinh thành thời xưa."
+            "Ví dụ": "我喜欢在夜晚读书。 (Wǒ xǐhuān zài yèwǎn dúshū.) – Tôi thích đọc sách vào ban đêm."
+        },
+        {
+            "STT": 22,
+            "Chữ Hán": "亳",
+            "Phiên âm": "bó",
+            "Ý nghĩa": "Địa danh (Bạc Châu)",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "亳州是一个历史悠久的城市。 (Bózhōu shì yí gè lìshǐ yōujiǔ de chéngshì.) – Bạc Châu là một thành phố có lịch sử lâu đời."
+        },
+        {
+            "STT": 23,
+            "Chữ Hán": "亵",
+            "Phiên âm": "xiè",
+            "Ý nghĩa": "Khinh nhờn, khinh bỉ",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "不要亵渎神圣。 (Bú yào xièdú shénshèng.) – Đừng báng bổ điều thiêng liêng."
+        },
+        {
+            "STT": 24,
+            "Chữ Hán": "亶",
+            "Phiên âm": "dǎn",
+            "Ý nghĩa": "Chân thành",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "他说话很亶诚。 (Tā shuōhuà hěn dǎnchéng.) – Anh ấy nói chuyện rất chân thành."
+        },
+        {
+            "STT": 25,
+            "Chữ Hán": "亷",
+            "Phiên âm": "lián",
+            "Ý nghĩa": "Liêm",
+            "Độ phổ biến": "TRUNG BÌNH",
+            "Ví dụ": "他是个亷洁的官员。 (Tā shì gè liánjié de guānyuán.) – Ông ấy là một quan chức liêm chính."
+        },
+        {
+            "STT": 26,
+            "Chữ Hán": "亸",
+            "Phiên âm": "duǒ",
+            "Ý nghĩa": "Rũ xuống, lệch",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "他的肩膀有点亸。 (Tā de jiānbǎng yǒudiǎn duǒ.) – Vai của anh ấy hơi lệch."
+        },
+        {
+            "STT": 27,
+            "Chữ Hán": "亹",
+            "Phiên âm": "wěi",
+            "Ý nghĩa": "Cố gắng, kiên trì",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "亹亹不倦地学习。 (Wěi wěi bú juàn de xuéxí.) – Cố gắng học tập không biết mệt mỏi."
+        },
+        {
+            "STT": 28,
+            "Chữ Hán": "亹",
+            "Phiên âm": "wěi",
+            "Ý nghĩa": "Cố gắng, kiên trì, chăm chỉ",
+            "Độ phổ biến": "THẤP",
+            "Ví dụ": "亹亹不倦地学习。 (Wěi wěi bú juàn de xuéxí.) – Chăm chỉ học tập không biết mệt mỏi."
         }
     ],
     "口": [
