@@ -23,7 +23,8 @@ async function generateDataJson() {
         const jsonData = XLSX.utils.sheet_to_json(sheet);
 
         // Lấy bộ thủ từ tên file (VD: "口-30.xlsx" → "口")
-        const radical = fileName.split("-")[0];
+        // const radical = fileName.split("-")[0];
+        const radical = fileName.split(/[-.]/)[0];
 
         if (!allData[radical]) {
             allData[radical] = [];
