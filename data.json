@@ -1,5 +1,5 @@
 {
-    "f01.xlsx": [
+    "f01": [
         {
             "STT": 1,
             "Chữ Hán": "我",
@@ -401,7 +401,7 @@
             "Ví dụ": "他的样子很特别。(Tā de yàngzi hěn tèbié.) – Diện mạo của anh ấy rất đặc biệt."
         }
     ],
-    "f02.xlsx": [
+    "f02": [
         {
             "STT": 1,
             "Chữ Hán": "也",
@@ -803,7 +803,7 @@
             "Ví dụ": "他打了我一下。(Tā dǎ le wǒ yīxià.) – Anh ấy đánh tôi một cái."
         }
     ],
-    "f03.xlsx": [
+    "f03": [
         {
             "STT": 1,
             "Chữ Hán": "地",
@@ -1205,7 +1205,7 @@
             "Ví dụ": "他说的都是真实的。(Tā shuō de dōu shì zhēnshí de.) – Những gì anh ấy nói đều là sự thật."
         }
     ],
-    "f14.xlsx": [
+    "f14": [
         {
             "STT": 1,
             "Chữ Hán": "惊",
