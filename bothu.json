@@ -1497,217 +1497,216 @@
         "phien_am": "yuè",
         "y_nghia": "sáo ba lỗ"
     },
-    [
-    {
-        "stt": "f01",
+    
+{
+        "stt": 301,
         "bo_thu": "f01",
         "ten_bo_thu": "f01",
         "phien_am": "f01",
         "y_nghia": "f01"
     },
     {
-        "stt": "f02",
+        "stt": 302,
         "bo_thu": "f02",
         "ten_bo_thu": "f02",
         "phien_am": "f02",
         "y_nghia": "f02"
     },
     {
-        "stt": "f03",
+        "stt": 303,
         "bo_thu": "f03",
         "ten_bo_thu": "f03",
         "phien_am": "f03",
         "y_nghia": "f03"
     },
     {
-        "stt": "f04",
+        "stt": 304,
         "bo_thu": "f04",
         "ten_bo_thu": "f04",
         "phien_am": "f04",
         "y_nghia": "f04"
     },
     {
-        "stt": "f05",
+        "stt": 305,
         "bo_thu": "f05",
         "ten_bo_thu": "f05",
         "phien_am": "f05",
         "y_nghia": "f05"
     },
     {
-        "stt": "f06",
+        "stt": 306,
         "bo_thu": "f06",
         "ten_bo_thu": "f06",
         "phien_am": "f06",
         "y_nghia": "f06"
     },
     {
-        "stt": "f07",
+        "stt": 307,
         "bo_thu": "f07",
         "ten_bo_thu": "f07",
         "phien_am": "f07",
         "y_nghia": "f07"
     },
     {
-        "stt": "f08",
+        "stt": 308,
         "bo_thu": "f08",
         "ten_bo_thu": "f08",
         "phien_am": "f08",
         "y_nghia": "f08"
     },
     {
-        "stt": "f09",
+        "stt": 309,
         "bo_thu": "f09",
         "ten_bo_thu": "f09",
         "phien_am": "f09",
         "y_nghia": "f09"
     },
     {
-        "stt": "f10",
+        "stt": 310,
         "bo_thu": "f10",
         "ten_bo_thu": "f10",
         "phien_am": "f10",
         "y_nghia": "f10"
     },
     {
-        "stt": "f11",
+        "stt": 311,
         "bo_thu": "f11",
         "ten_bo_thu": "f11",
         "phien_am": "f11",
         "y_nghia": "f11"
     },
     {
-        "stt": "f12",
+        "stt": 312,
         "bo_thu": "f12",
         "ten_bo_thu": "f12",
         "phien_am": "f12",
         "y_nghia": "f12"
     },
     {
-        "stt": "f13",
+        "stt": 313,
         "bo_thu": "f13",
         "ten_bo_thu": "f13",
         "phien_am": "f13",
         "y_nghia": "f13"
     },
     {
-        "stt": "f14",
+        "stt": 314,
         "bo_thu": "f14",
         "ten_bo_thu": "f14",
         "phien_am": "f14",
         "y_nghia": "f14"
     },
     {
-        "stt": "f15",
+        "stt": 315,
         "bo_thu": "f15",
         "ten_bo_thu": "f15",
         "phien_am": "f15",
         "y_nghia": "f15"
     },
     {
-        "stt": "f16",
+        "stt": 316,
         "bo_thu": "f16",
         "ten_bo_thu": "f16",
         "phien_am": "f16",
         "y_nghia": "f16"
     },
     {
-        "stt": "f17",
+        "stt": 317,
         "bo_thu": "f17",
         "ten_bo_thu": "f17",
         "phien_am": "f17",
         "y_nghia": "f17"
     },
     {
-        "stt": "f18",
+        "stt": 318,
         "bo_thu": "f18",
         "ten_bo_thu": "f18",
         "phien_am": "f18",
         "y_nghia": "f18"
     },
     {
-        "stt": "f19",
+        "stt": 319,
         "bo_thu": "f19",
         "ten_bo_thu": "f19",
         "phien_am": "f19",
         "y_nghia": "f19"
     },
     {
-        "stt": "f20",
+        "stt": 320,
         "bo_thu": "f20",
         "ten_bo_thu": "f20",
         "phien_am": "f20",
         "y_nghia": "f20"
     },
     {
-        "stt": "f21",
+        "stt": 321,
         "bo_thu": "f21",
         "ten_bo_thu": "f21",
         "phien_am": "f21",
         "y_nghia": "f21"
     },
     {
-        "stt": "f22",
+        "stt": 322,
         "bo_thu": "f22",
         "ten_bo_thu": "f22",
         "phien_am": "f22",
         "y_nghia": "f22"
     },
     {
-        "stt": "f23",
+        "stt": 323,
         "bo_thu": "f23",
         "ten_bo_thu": "f23",
         "phien_am": "f23",
         "y_nghia": "f23"
     },
     {
-        "stt": "f24",
+        "stt": 324,
         "bo_thu": "f24",
         "ten_bo_thu": "f24",
         "phien_am": "f24",
         "y_nghia": "f24"
     },
     {
-        "stt": "f25",
+        "stt": 325,
         "bo_thu": "f25",
         "ten_bo_thu": "f25",
         "phien_am": "f25",
         "y_nghia": "f25"
     },
     {
-        "stt": "f26",
+        "stt": 326,
         "bo_thu": "f26",
         "ten_bo_thu": "f26",
         "phien_am": "f26",
         "y_nghia": "f26"
     },
     {
-        "stt": "f27",
+        "stt": 327,
         "bo_thu": "f27",
         "ten_bo_thu": "f27",
         "phien_am": "f27",
         "y_nghia": "f27"
     },
     {
-        "stt": "f28",
+        "stt": 328,
         "bo_thu": "f28",
         "ten_bo_thu": "f28",
         "phien_am": "f28",
         "y_nghia": "f28"
     },
     {
-        "stt": "f29",
+        "stt": 329,
         "bo_thu": "f29",
         "ten_bo_thu": "f29",
         "phien_am": "f29",
         "y_nghia": "f29"
     },
     {
-        "stt": "f30",
+        "stt": 330,
         "bo_thu": "f30",
         "ten_bo_thu": "f30",
         "phien_am": "f30",
         "y_nghia": "f30"
     }
-]
 
 ]
