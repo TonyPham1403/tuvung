@@ -1780,9 +1780,9 @@
             "STT": 22,
             "Chữ Hán": "接",
             "Phiên âm": "jiē",
-            "Ý nghĩa": "Đón nhận",
+            "Ý nghĩa": "Tiếp đón",
             "Độ phổ biến": "CAO",
-            "Ví dụ": "他开心地接过礼物。(Tā kāixīn de jiē guò lǐwù.) – Anh ấy vui vẻ đón nhận món quà."
+            "Ví dụ": "我们去机场接他。 (Wǒmen qù jīchǎng jiē tā.) – Chúng tôi đi đón anh ấy tại sân bay."
         },
         {
             "STT": 23,
@@ -4017,6 +4017,408 @@
             "Ý nghĩa": "Đài, sân khấu",
             "Độ phổ biến": "CAO",
             "Ví dụ": "选手走上台比赛。(Xuǎnshǒu zǒu shàng tái bǐsài.) – Tuyển thủ bước lên võ đài thi đấu."
+        }
+    ],
+    "f11": [
+        {
+            "STT": 1,
+            "Chữ Hán": "另",
+            "Phiên âm": "lìng",
+            "Ý nghĩa": "Khác",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我们有另的计划。 (Wǒmen yǒu lìng de jìhuà.) – Chúng tôi có kế hoạch khác."
+        },
+        {
+            "STT": 2,
+            "Chữ Hán": "恩",
+            "Phiên âm": "ēn",
+            "Ý nghĩa": "Ân huệ",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "他给了我很多恩惠。 (Tā gěi le wǒ hěn duō ēnhuì.) – Anh ấy đã cho tôi rất nhiều ân huệ."
+        },
+        {
+            "STT": 3,
+            "Chữ Hán": "书",
+            "Phiên âm": "shū",
+            "Ý nghĩa": "Sách",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我喜欢读书。 (Wǒ xǐhuān dú shū.) – Tôi thích đọc sách."
+        },
+        {
+            "STT": 4,
+            "Chữ Hán": "统",
+            "Phiên âm": "tǒng",
+            "Ý nghĩa": "Thống nhất",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这个国家有一个统一的制度。 (Zhège guójiā yǒu yīgè tǒngyī de zhìdù.) – Quốc gia này có một chế độ thống nhất."
+        },
+        {
+            "STT": 5,
+            "Chữ Hán": "风",
+            "Phiên âm": "fēng",
+            "Ý nghĩa": "Gió",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "今天天气很风。 (Jīntiān tiānqì hěn fēng.) – Hôm nay thời tiết rất có gió."
+        },
+        {
+            "STT": 6,
+            "Chữ Hán": "况",
+            "Phiên âm": "kuàng",
+            "Ý nghĩa": "Tình huống",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我们不清楚况况。 (Wǒmen bù qīngchǔ kuàngkuàng.) – Chúng tôi không rõ tình huống."
+        },
+        {
+            "STT": 7,
+            "Chữ Hán": "四",
+            "Phiên âm": "sì",
+            "Ý nghĩa": "Bốn",
+            "Độ phổ biến": "RẤT CAO",
+            "Ví dụ": "四个朋友。 (Sì gè péngyǒu.) – Bốn người bạn."
+        },
+        {
+            "STT": 8,
+            "Chữ Hán": "黑",
+            "Phiên âm": "hēi",
+            "Ý nghĩa": "Đen",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "黑猫。 (Hēi māo.) – Con mèo đen."
+        },
+        {
+            "STT": 9,
+            "Chữ Hán": "否",
+            "Phiên âm": "fǒu",
+            "Ý nghĩa": "Phủ định",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他否认了这个事实。 (Tā fǒurèn le zhège shìshí.) – Anh ấy phủ định sự thật này."
+        },
+        {
+            "STT": 10,
+            "Chữ Hán": "险",
+            "Phiên âm": "xiǎn",
+            "Ý nghĩa": "Nguy hiểm",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这条路很险。 (Zhè tiáo lù hěn xiǎn.) – Con đường này rất nguy hiểm."
+        },
+        {
+            "STT": 11,
+            "Chữ Hán": "言",
+            "Phiên âm": "yán",
+            "Ý nghĩa": "Lời nói",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他的言辞十分有力量。(Tā de yáncí shífēn yǒu lìliàng.) – Lời nói của anh ấy rất mạnh mẽ."
+        },
+        {
+            "STT": 12,
+            "Chữ Hán": "米",
+            "Phiên âm": "mǐ",
+            "Ý nghĩa": "Gạo",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我买了一袋米。 (Wǒ mǎi le yī dài mǐ.) – Tôi mua một túi gạo."
+        },
+        {
+            "STT": 13,
+            "Chữ Hán": "杰",
+            "Phiên âm": "jié",
+            "Ý nghĩa": "Xuất sắc",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他是一个杰出的学生。 (Tā shì yīgè jiéchū de xuéshēng.) – Anh ấy là một học sinh xuất sắc."
+        },
+        {
+            "STT": 14,
+            "Chữ Hán": "校",
+            "Phiên âm": "xiào",
+            "Ý nghĩa": "Trường học",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我每天去校。 (Wǒ měitiān qù xiào.) – Tôi đến trường học mỗi ngày."
+        },
+        {
+            "STT": 15,
+            "Chữ Hán": "幸",
+            "Phiên âm": "xìng",
+            "Ý nghĩa": "Hạnh phúc",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我感到很幸福。 (Wǒ gǎndào hěn xìngfú.) – Tôi cảm thấy rất hạnh phúc."
+        },
+        {
+            "STT": 16,
+            "Chữ Hán": "传",
+            "Phiên âm": "chuán",
+            "Ý nghĩa": "Truyền đạt",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我给他传了消息。 (Wǒ gěi tā chuán le xiāoxī.) – Tôi đã truyền đạt tin tức cho anh ấy."
+        },
+        {
+            "STT": 17,
+            "Chữ Hán": "复",
+            "Phiên âm": "fù",
+            "Ý nghĩa": "Phục hồi",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他很快就复原了。 (Tā hěn kuài jiù fùyuán le.) – Anh ấy phục hồi rất nhanh."
+        },
+        {
+            "STT": 18,
+            "Chữ Hán": "量",
+            "Phiên âm": "liàng",
+            "Ý nghĩa": "Lượng",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "量的增加很快。 (Liàng de zēngjiā hěn kuài.) – Số lượng tăng lên nhanh chóng."
+        },
+        {
+            "STT": 19,
+            "Chữ Hán": "首",
+            "Phiên âm": "shǒu",
+            "Ý nghĩa": "Thủ lĩnh",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他是我们队的首领。 (Tā shì wǒmen duì de shǒulǐng.) – Anh ấy là thủ lĩnh đội của chúng tôi."
+        },
+        {
+            "STT": 20,
+            "Chữ Hán": "改",
+            "Phiên âm": "gǎi",
+            "Ý nghĩa": "Sửa đổi",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "你需要改正这个错误。 (Nǐ xūyào gǎizhèng zhège cuòwù.) – Bạn cần sửa đổi lỗi này."
+        },
+        {
+            "STT": 21,
+            "Chữ Hán": "忘",
+            "Phiên âm": "wàng",
+            "Ý nghĩa": "Quên",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我忘了带钥匙。 (Wǒ wàng le dài yàoshi.) – Tôi quên mang chìa khóa."
+        },
+        {
+            "STT": 22,
+            "Chữ Hán": "术",
+            "Phiên âm": "shù",
+            "Ý nghĩa": "Kỹ thuật",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他学的是医学术。 (Tā xué de shì yīxué shù.) – Anh ấy học về kỹ thuật y tế."
+        },
+        {
+            "STT": 23,
+            "Chữ Hán": "局",
+            "Phiên âm": "jú",
+            "Ý nghĩa": "Cục diện",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "Dāngqián de júshì fēicháng fùzá.) – Cục diện hiện tại rất phức tạp."
+        },
+        {
+            "STT": 24,
+            "Chữ Hán": "客",
+            "Phiên âm": "kè",
+            "Ý nghĩa": "Khách",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他是我们的客户。 (Tā shì wǒmen de kèhù.) – Anh ấy là khách hàng của chúng tôi."
+        },
+        {
+            "STT": 25,
+            "Chữ Hán": "假",
+            "Phiên âm": "jiǎ",
+            "Ý nghĩa": "Giả, giả mạo",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这是一张假票。 (**Zhè shì yī zhāng jiǎ piào.) – Đây là một vé giả."
+        },
+        {
+            "STT": 26,
+            "Chữ Hán": "永",
+            "Phiên âm": "yǒng",
+            "Ý nghĩa": "Vĩnh cửu",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这份友情是永恒的。 (**Zhè fèn yǒuqíng shì yǒnghéng de.) – Tình bạn này là vĩnh cửu."
+        },
+        {
+            "STT": 27,
+            "Chữ Hán": "维",
+            "Phiên âm": "wéi",
+            "Ý nghĩa": "Duy trì",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他帮助我维持健康。 (Tā bāngzhù wǒ wéichí jiànkāng.) – Anh ấy giúp tôi duy trì sức khỏe."
+        },
+        {
+            "STT": 28,
+            "Chữ Hán": "岁",
+            "Phiên âm": "suì",
+            "Ý nghĩa": "Tuổi",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他今年岁。 (Tā jīnnián suì.) – Anh ấy năm nay bao nhiêu tuổi."
+        },
+        {
+            "STT": 29,
+            "Chữ Hán": "据",
+            "Phiên âm": "jù",
+            "Ý nghĩa": "Căn cứ theo",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "据统计，80%的学生通过了考试。 (Jù tǒngjì, 80% de xuéshēng tōngguòle kǎoshì.) – Theo thống kê, 80% học sinh đã vượt qua kỳ thi."
+        },
+        {
+            "STT": 30,
+            "Chữ Hán": "派",
+            "Phiên âm": "pài",
+            "Ý nghĩa": "Phái, cử đi",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他被派往北京。 (Tā bèi pài wǎng Běijīng.) – Anh ấy được cử đi Bắc Kinh."
+        },
+        {
+            "STT": 31,
+            "Chữ Hán": "票",
+            "Phiên âm": "piào",
+            "Ý nghĩa": "Vé",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我买了两张票。 (Wǒ mǎi le liǎng zhāng piào.) – Tôi đã mua hai tấm vé."
+        },
+        {
+            "STT": 32,
+            "Chữ Hán": "兰",
+            "Phiên âm": "lán",
+            "Ý nghĩa": "Hoa lan",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这朵兰花很美。 (Zhè duǒ lán huā hěn měi.) – Đoá hoa lan này rất đẹp."
+        },
+        {
+            "STT": 33,
+            "Chữ Hán": "恶",
+            "Phiên âm": "è",
+            "Ý nghĩa": "Ác",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这是一个恶行。 (Zhè shì yī gè èxíng.) – Đây là một hành động ác."
+        },
+        {
+            "STT": 34,
+            "Chữ Hán": "烦",
+            "Phiên âm": "fán",
+            "Ý nghĩa": "Phiền",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他感到很烦。 (Tā gǎndào hěn fán.) – Anh ấy cảm thấy rất phiền."
+        },
+        {
+            "STT": 35,
+            "Chữ Hán": "取",
+            "Phiên âm": "qǔ",
+            "Ý nghĩa": "Lấy, rút",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我去取钱。 (Wǒ qù qǔ qián.) – Tôi đi rút tiền."
+        },
+        {
+            "STT": 36,
+            "Chữ Hán": "游",
+            "Phiên âm": "yóu",
+            "Ý nghĩa": "Bơi",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我喜欢游泳。 (Wǒ xǐhuān yóuyǒng.) – Tôi thích bơi."
+        },
+        {
+            "STT": 37,
+            "Chữ Hán": "糟",
+            "Phiên âm": "zāo",
+            "Ý nghĩa": "Hỏng",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这件东西已经糟了。(Zhè jiàn dōngxi yǐjīng zāo le.) – Món đồ này đã hỏng rồi."
+        },
+        {
+            "STT": 38,
+            "Chữ Hán": "令",
+            "Phiên âm": "lìng",
+            "Ý nghĩa": "Ra lệnh",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他令我们停止工作。 (Tā lìng wǒmen tíngzhǐ gōngzuò.) – Anh ấy ra lệnh chúng tôi ngừng làm việc."
+        },
+        {
+            "STT": 39,
+            "Chữ Hán": "随",
+            "Phiên âm": "suí",
+            "Ý nghĩa": "Tùy",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "你随便选择一个位置坐下。 (Nǐ suíbiàn xuǎnzé yī gè wèizhi zuòxià.) – Bạn có thể tùy ý chọn một chỗ ngồi."
+        },
+        {
+            "STT": 40,
+            "Chữ Hán": "五",
+            "Phiên âm": "wǔ",
+            "Ý nghĩa": "Năm",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "五个苹果。 (Wǔ gè píngguǒ.) – Năm quả táo."
+        },
+        {
+            "STT": 41,
+            "Chữ Hán": "圣",
+            "Phiên âm": "shèng",
+            "Ý nghĩa": "Thánh",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我喜欢听圣歌。(Wǒ xǐhuān tīng shènggē.) – Tôi thích nghe thánh ca."
+        },
+        {
+            "STT": 42,
+            "Chữ Hán": "式",
+            "Phiên âm": "shì",
+            "Ý nghĩa": "Hình thức",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这种式样很受欢迎。 (Zhè zhǒng shìyàng hěn shòu huānyíng.) – Hình thức này rất được ưa chuộng."
+        },
+        {
+            "STT": 43,
+            "Chữ Hán": "探",
+            "Phiên âm": "tàn",
+            "Ý nghĩa": "Thăm",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "我们计划下周去探亲。 (Wǒmen jìhuà xià zhōu qù tàn qīn.) – Chúng tôi dự định tuần sau sẽ đi thăm người thân."
+        },
+        {
+            "STT": 44,
+            "Chữ Hán": "嘴",
+            "Phiên âm": "zuǐ",
+            "Ý nghĩa": "Miệng",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他张开嘴说话。 (Tā zhāngkāi zuǐ shuōhuà.) – Anh ấy mở miệng nói chuyện."
+        },
+        {
+            "STT": 45,
+            "Chữ Hán": "毒",
+            "Phiên âm": "dú",
+            "Ý nghĩa": "Độc",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这是一种毒药。 (Zhè shì yī zhǒng dú yào.) – Đây là một loại thuốc độc."
+        },
+        {
+            "STT": 46,
+            "Chữ Hán": "越",
+            "Phiên âm": "yuè",
+            "Ý nghĩa": "Việt, càng...càng",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他在越南工作。 (Tā zài Yuènán gōngzuò.) – Anh ấy làm việc tại Việt Nam. / 他越说越快。 (Tā yuè shuō yuè kuài.) – Anh ấy càng nói càng nhanh."
+        },
+        {
+            "STT": 47,
+            "Chữ Hán": "律",
+            "Phiên âm": "lǜ",
+            "Ý nghĩa": "Luật",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "你必须遵守法律律。 (Nǐ bìxū zūnshǒu fǎlǜ.) – Bạn phải tuân theo pháp luật."
+        },
+        {
+            "STT": 48,
+            "Chữ Hán": "费",
+            "Phiên âm": "fèi",
+            "Ý nghĩa": "Phí",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这个服务有费用。 (Zhège fúwù yǒu fèiyòng.) – Dịch vụ này có phí."
+        },
+        {
+            "STT": 49,
+            "Chữ Hán": "科",
+            "Phiên âm": "kē",
+            "Ý nghĩa": "Khoa, ngành",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "他选择了计算机科。 (Tā xuǎnzé le jìsuànjī kē.) – Anh ấy đã chọn ngành khoa học máy tính."
+        },
+        {
+            "STT": 50,
+            "Chữ Hán": "麻",
+            "Phiên âm": "má",
+            "Ý nghĩa": "Cay",
+            "Độ phổ biến": "CAO",
+            "Ví dụ": "这道菜有点麻辣。(Zhè dào cài yǒudiǎn málà.) – Món ăn này hơi cay."
         }
     ],
     "f14": [
