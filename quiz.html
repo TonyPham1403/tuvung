@@ -20,7 +20,7 @@
         }
 
         .question {
-            font-size: 28px;
+            font-size: 19px;
             margin: 0;
             /* Không có khoảng cách trên dưới */
             font-weight: bold;
@@ -279,13 +279,13 @@
         .navigation-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 5px;
             margin-top: 10px;
         }
 
         .navigation-buttons button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 8px 16px;
+            font-size: 14px;
             border: none;
             cursor: pointer;
             background-color: #007bff;
@@ -376,6 +376,7 @@
                 <div id="explanation">...</div>
                 <div class="navigation-buttons">
                     <button class="navBtn" id="prevBtn">Câu trước</button>
+                    <button class="navBtn" id="swapButton">🔄 Swap</button>
                     <button class="navBtn" id="nextBtn">Câu sau</button>
                 </div>
             </div>
@@ -454,32 +455,24 @@
             }
         });
 
+        let swap = false;  // Biến để theo dõi trạng thái swap (false = mặc định, true = swap)
 
-        // Mở menu lịch sử
-        document.getElementById("menuButton").addEventListener("click", function () {
-            let menu = document.getElementById("historyMenu");
+        document.getElementById("swapButton").addEventListener("click", () => {
+            swap = !swap; // Đảo giá trị của swap (true <=> false)
+            console.log("Swap value after click:", swap); // Kiểm tra giá trị của swap sau khi nhấn nút
 
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-                menu.style.left = "50%"; // Giữ căn giữa
-                menu.style.top = "70px"; // Giữ đúng vị trí dưới score
-                menu.style.transform = "translateX(-50%)"; // Đảm bảo căn giữa theo trục ngang
-            }
+            // Cập nhật lại câu hỏi và đáp án khi swap thay đổi
+            loadQuestion();
         });
 
+        //-------------------------------------------------------------------------------------------------------
 
+        //-------------------------------------------------------------------------------------------------------
 
-        // Hàm trộn mảng
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
+        //-------------------------------------------------------------------------------------------------------
 
         function loadQuestion() {
+            console.log("swap value:", swap);
             // Xóa lời giải thích khi chuyển sang câu mới
             document.getElementById("explanation").textContent = "";
 
@@ -492,22 +485,40 @@
             let allAnswers;
             let isReviewing = currentQuestion < latestQuestion; // Nếu currentQuestion < latestQuestion => Đang xem lại lịch sử
 
-            if (history[currentQuestion]) {
+            if (isReviewing) {
                 // Nếu câu hỏi đã có trong lịch sử, lấy lại câu cũ
                 item = history[currentQuestion].question;
                 allAnswers = history[currentQuestion].answers;
+                console.log("Đang xem lịch sử", currentQuestion, latestQuestion);
             } else {
                 // Chọn ngẫu nhiên một câu hỏi mới
                 let randomIndex = Math.floor(Math.random() * data.length);
                 item = data[randomIndex];
 
-                let correctAnswer = item["Ý nghĩa"];
+                let correctAnswer;
+
+                // Kiểm tra giá trị của swap
+                if (swap) {
+                    // Khi swap = true, correctAnswer là "Chữ Hán"
+                    correctAnswer = item["Chữ Hán"];
+                } else {
+                    // Khi swap = false, correctAnswer là "Ý nghĩa"
+                    correctAnswer = item["Ý nghĩa"];
+                }
 
                 // Lấy ngẫu nhiên 3 đáp án sai từ data (không bao gồm câu hỏi hiện tại)
                 let wrongAnswers = [];
                 while (wrongAnswers.length < 3) {
                     let randomWrongIndex = Math.floor(Math.random() * data.length);
-                    let randomWrongAnswer = data[randomWrongIndex]["Ý nghĩa"];
+                    let randomWrongAnswer;
+
+                    // Nếu swap = true, đáp án sai cũng phải là "Chữ Hán"
+                    if (swap) {
+                        randomWrongAnswer = data[randomWrongIndex]["Chữ Hán"];
+                    } else {
+                        randomWrongAnswer = data[randomWrongIndex]["Ý nghĩa"];
+                    }
+
                     if (randomWrongAnswer !== correctAnswer && !wrongAnswers.includes(randomWrongAnswer)) {
                         wrongAnswers.push(randomWrongAnswer);
                     }
@@ -515,7 +526,7 @@
 
                 allAnswers = [correctAnswer, ...wrongAnswers];
                 shuffleArray(allAnswers); // Trộn các đáp án
-
+                console.log("All Answers fow now:", allAnswers, swap);
                 // Lưu câu hỏi vào lịch sử
                 history[currentQuestion] = {
                     question: item,
@@ -531,12 +542,23 @@
             let textColor = popularityColors[item["Độ phổ biến"]] || "black";
 
             // Hiển thị câu hỏi và đáp án (Chữ Hán, Phiên âm có màu)
-            document.getElementById("question").innerHTML = `
-    <div class="question-container" style="position: relative; text-align: center;">
-        <h2 style="display: inline-block;">${item["Chữ Hán"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>
-        <button id="copyButton" class="copy-btn" style="position: absolute; right: 0;">📋Copy</button>
-    </div>
-`;
+            // Hiển thị câu hỏi và đáp án (Chữ Hán, Phiên âm có màu)
+            if (swap) {
+                document.getElementById("question").innerHTML = `
+            <div class="question-container" style="position: relative; text-align: center;">
+                <h2 style="display: inline-block;">${item["Ý nghĩa"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>
+                <button id="copyButton" class="copy-btn" style="position: absolute; right: 0;">📋Copy</button>
+            </div>
+        `;
+            } else {
+                document.getElementById("question").innerHTML = `
+            <div class="question-container" style="position: relative; text-align: center;">
+                <h2 style="display: inline-block;">${item["Chữ Hán"]} <span style="font-weight: bold;">/${item["Phiên âm"]}/</span> ${popularityColors[item["Độ phổ biến"]]}</h2>
+                <button id="copyButton" class="copy-btn" style="position: absolute; right: 0;">📋Copy</button>
+            </div>
+        `;
+            }
+
 
 
 
@@ -555,11 +577,24 @@
             allAnswers.forEach(ans => {
                 let div = document.createElement("div");
                 div.classList.add("option");
-                div.textContent = ans;
+                //div.textContent = ans;
+                // Nếu đang swap, hiển thị đáp án đúng là "Chữ Hán" hoặc "Ý nghĩa" tùy theo trạng thái swap
+                if (swap) {
+                    // Thay đổi tất cả các đáp án
+                    div.textContent = ans === item["Ý nghĩa"] ? item["Chữ Hán"] : ans;
+                } else {
+                    // Thay đổi tất cả các đáp án
+                    div.textContent = ans === item["Chữ Hán"] ? item["Ý nghĩa"] : ans;
+                }
 
                 // 🛠 Nếu đang xem lại lịch sử (currentQuestion < latestQuestion), khóa click
                 if (!isReviewing) {
-                    div.onclick = () => handleAnswerClick(div, ans, item["Ý nghĩa"], item["Ví dụ"]);
+                    if (swap === false) {
+                        div.onclick = () => handleAnswerClick(div, ans, item["Ý nghĩa"], item["Ví dụ"]);
+                    }
+                    else {
+                        div.onclick = () => handleAnswerClick(div, ans, item["Chữ Hán"], item["Ví dụ"]);
+                    }
                 } else {
                     div.style.pointerEvents = "none"; // Khóa click
                     // div.style.opacity = "0.6"; // Làm mờ để hiển thị đây là lịch sử
@@ -606,27 +641,14 @@
             updateHistoryMenu();
         }
 
-
-        function formatExplanation(explanation, item) {
-            if (!explanation) return "Không có giải thích.";
-
-            let boldWords = [item["Chữ Hán"], item["Phiên âm"], item["Ý nghĩa"]];
-            boldWords.forEach(word => {
-                if (word) {
-                    let regex = new RegExp(word, "gi");
-                    explanation = explanation.replace(regex, `<b>${word}</b>`);
-                }
-            });
-
-            return explanation;
-        }
-
-
-
+        //-------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------
 
         // Xử lý khi chọn đáp án
         function handleAnswerClick(div, selectedAnswer, correctAnswer, example) {
             let questionData = history[currentQuestion]; // Lấy dữ liệu câu hỏi từ history
+
 
             if (!questionData.selected) {
                 questionData.selected = selectedAnswer;
@@ -674,6 +696,60 @@
 
             updateHistoryMenu();
         }
+
+        //-------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        // Mở menu lịch sử
+        document.getElementById("menuButton").addEventListener("click", function () {
+            let menu = document.getElementById("historyMenu");
+
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+                menu.style.left = "50%"; // Giữ căn giữa
+                menu.style.top = "70px"; // Giữ đúng vị trí dưới score
+                menu.style.transform = "translateX(-50%)"; // Đảm bảo căn giữa theo trục ngang
+            }
+        });
+
+
+
+        // Hàm trộn mảng
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+
+
+
+        function formatExplanation(explanation, item) {
+            if (!explanation) return "Không có giải thích.";
+
+            let boldWords = [item["Chữ Hán"], item["Phiên âm"], item["Ý nghĩa"]];
+            boldWords.forEach(word => {
+                if (word) {
+                    let regex = new RegExp(word, "gi");
+                    explanation = explanation.replace(regex, `<b>${word}</b>`);
+                }
+            });
+
+            return explanation;
+        }
+
+
+
+
+
 
         function highlightKeywords(explanation, item) {
             if (!explanation) return "Không có giải thích.";
